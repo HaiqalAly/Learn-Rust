@@ -9,6 +9,7 @@ This repository contains my Rust learning journey with Rustlings exercises. My g
 4. [✔️] Primitive Types
 5. [✔️] Vecs
 6. [✔️] Move Semantics
+7. [✔️] Structs
 
 ## 📝 Notes
 
@@ -58,6 +59,13 @@ This repository contains my Rust learning journey with Rustlings exercises. My g
 - Borrowing: Mutable borrows (`&mut`) must be used one at a time, no overlapping borrows
 - References vs Ownership: Use `&String` to borrow without taking ownership; use `String` to take ownership
 - Key concepts: choosing between borrowing (`&T`) and ownership transfer depending on whether the function needs to consume the value
+
+### 07. Structs
+- Defined classic, tuple, and unit structs in [exercises/07_structs/structs1.rs](exercises/07_structs/structs1.rs)
+- Instantiated each kind; accessed named fields (like `.red`) and tuple indices (`.0`, `.1`, `.2`); formatted a unit struct with `{:?}`
+- Used struct update syntax (`..template`) in [exercises/07_structs/structs2.rs](exercises/07_structs/structs2.rs) to build a new `Order` from a template while overriding `name` and `count`
+- Implemented methods and an associated constructor in [exercises/07_structs/structs3.rs](exercises/07_structs/structs3.rs): `is_international()` comparing countries, and `get_fees()` multiplying `cents_per_gram * weight_in_grams`
+- Practiced method receivers with `&self`
 
 ### Quiz 1
 - Wrote function with `u32` params and return type
