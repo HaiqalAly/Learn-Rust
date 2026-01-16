@@ -17,17 +17,7 @@ This repository contains my Rust learning journey with Rustlings exercises. My g
 10. [✔️] Modules
 11. [✔️] Hashmaps
 12. [✔️] Options
-13. [ ] Error Handling
-14. [ ] Generics
-15. [ ] Traits
-16. [ ] Lifetimes
-17. [ ] Tests
-18. [ ] Iterators
-19. [ ] Smart Pointers
-20. [ ] Threads
-21. [ ] Macros
-22. [ ] Clippy
-23. [ ] Conversions
+13. [✔️] Error Handling
 
 ## 📝 Notes
 

@@ -96,6 +96,23 @@
 - Custom structs as values in [exercises/11_hashmaps/hashmaps3.rs](exercises/11_hashmaps/hashmaps3.rs): `.entry(key).or_default()` creates entry with `Default` trait, then mutate the returned reference
 - Applied to soccer scores: tracked goals scored and conceded per team across multiple matches
 
+## 12. Options
+- `Option<T>` represents optional values: `Some(value)` or `None` (replaces null)
+- Returning Options in [exercises/12_options/options1.rs](exercises/12_options/options1.rs): return `Some(T)` when value exists, `None` otherwise; extract with `.unwrap_or(default)`
+- Pattern matching in [exercises/12_options/options2.rs](exercises/12_options/options2.rs): `if let Some(value) = optional` for single case, `while let Some(Some(value))` for nested Options
+- Borrowing in [exercises/12_options/options3.rs](exercises/12_options/options3.rs): use `Some(ref p)` to borrow instead of moving the value out of Option
+
+## 13. Error Handling
+- `Result<T, E>` represents operations that can succeed or fail: `Ok(value)` for success, `Err(error)` for failure
+- Converting from Option to Result in [exercises/13_error_handling/errors1.rs](exercises/13_error_handling/errors1.rs): changed `Option<String>` to `Result<String, String>`, replacing `None` with `Err(message)` and `Some(value)` with `Ok(value)`
+- The `?` operator in [exercises/13_error_handling/errors2.rs](exercises/13_error_handling/errors2.rs): propagates errors automatically; `parse::<i32>()?` returns early with `Err` if parsing fails, otherwise unwraps the `Ok` value
+- Propagating errors in main in [exercises/13_error_handling/errors3.rs](exercises/13_error_handling/errors3.rs): changed `main()` to `main() -> Result<(), ParseIntError>` and added `Ok(())` at the end to allow using `?` operator
+- Custom error types in [exercises/13_error_handling/errors4.rs](exercises/13_error_handling/errors4.rs): defined `CreationError` enum with `Negative` and `Zero` variants, used pattern matching to return appropriate error type
+- Trait objects with `Box<dyn Error>` in [exercises/13_error_handling/errors5.rs](exercises/13_error_handling/errors5.rs): allows handling multiple error types by implementing the `Error` trait; `Box<dyn Error>` acts as a catch-all for any error type
+- Composing custom errors in [exercises/13_error_handling/errors6.rs](exercises/13_error_handling/errors6.rs): created `ParseIntError`; used `.map_err()` to convert error types when propagating with `?`
+
+---
+
 ## Quiz 1
 - Wrote function with `u32` params and return type
 - Applied bulk discount logic: if qty > 40 then 1 rustbuck/apple, else 2 rustbucks/apple
@@ -110,9 +127,3 @@
   - `Append(n)`: looped `n` times pushing "bar" to a mutable string
 - Imported function from module with `use crate::my_module::transformer`
 - Combined concepts: enums, match expressions, vectors, string methods, modules, and move semantics
-
-## 12. Options
-- `Option<T>` represents optional values: `Some(value)` or `None` (replaces null)
-- Returning Options in [exercises/12_options/options1.rs](exercises/12_options/options1.rs): return `Some(T)` when value exists, `None` otherwise; extract with `.unwrap_or(default)`
-- Pattern matching in [exercises/12_options/options2.rs](exercises/12_options/options2.rs): `if let Some(value) = optional` for single case, `while let Some(Some(value))` for nested Options
-- Borrowing in [exercises/12_options/options3.rs](exercises/12_options/options3.rs): use `Some(ref p)` to borrow instead of moving the value out of Option
