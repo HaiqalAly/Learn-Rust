@@ -122,6 +122,19 @@
 - Trait bounds with `impl Trait` in [exercises/15_traits/traits4.rs](exercises/15_traits/traits4.rs): used `fn func(arg: impl Trait)` to accept any type that implements a trait, enabling polymorphism
 - Multiple trait bounds in [exercises/15_traits/traits5.rs](exercises/15_traits/traits5.rs): used `+` syntax (`impl Trait1 + Trait2`) to specify that a parameter must implement multiple traits
 
+## 16. Lifetimes
+- Lifetime annotations (`'a`) help the compiler ensure references are valid (prevent dangling pointers)
+- Annotated function signatures in [exercises/16_lifetimes/lifetimes1.rs](exercises/16_lifetimes/lifetimes1.rs): `fn longest<'a>(x: &'a str, y: &'a str) -> &'a str` links output lifetime to inputs
+- Fixed scope issues in [exercises/16_lifetimes/lifetimes2.rs](exercises/16_lifetimes/lifetimes2.rs): ensured data outlives its references by moving variable declaration to a wider scope
+- Annotated structs in [exercises/16_lifetimes/lifetimes3.rs](exercises/16_lifetimes/lifetimes3.rs): defined `struct Book<'a>` to enforce that referenced fields (`author`, `title`) live at least as long as the struct
+
+## 17. Tests
+- Defined unit tests in a dedicated module with `#[cfg(test)]` annotation
+- Imported parent module functions using `use super::*` to access code being tested
+- Used `assert!(expression)` to verify boolean conditions in [exercises/17_tests/tests1.rs](exercises/17_tests/tests1.rs)
+- Used `assert_eq!(left, right)` to verify equality between values in [exercises/17_tests/tests2.rs](exercises/17_tests/tests2.rs)
+- Used `#[should_panic]` attribute to test that specific code paths (like invalid input) correctly panic in [exercises/17_tests/tests3.rs](exercises/17_tests/tests3.rs)
+
 ---
 
 ## Quiz 1
