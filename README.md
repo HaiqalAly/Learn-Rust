@@ -26,7 +26,8 @@ This repository contains my Rust learning journey with Rustlings exercises. My g
 19. [✔️] Smart Pointers
 20. [✔️] Threads
 21. [✔️] Macros
+21. [✔️] Clippy
 
 ## 📝 Notes
 
-For detailed notes on each module, see [NOTES.md](NOTES.md).
+For detailed notes on each module, see [NOTES.md](NOTES1.md), [NOTES2.md](NOTES2.md).
